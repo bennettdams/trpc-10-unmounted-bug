@@ -1,38 +1,34 @@
 import type { AppProps } from 'next/app'
-import NextLink from 'next/link'
-import { ReactNode } from 'react'
+import Link from 'next/link'
 import '../styles/globals.css'
 import { trpc } from '../util/trpc'
-
-export function Link({
-  to,
-  children,
-  disablePrefetch = false,
-}: {
-  to: string
-  children: ReactNode
-  /**
-   * By default, Next.js' links will be prefetched when they come into viewport or when they're hovered.
-   */
-  disablePrefetch?: boolean
-}): JSX.Element {
-  return disablePrefetch ? (
-    <a href={to}>
-      <div className="cursor-pointer">{children}</div>
-    </a>
-  ) : (
-    <NextLink href={to}>
-      <div className="cursor-pointer">{children}</div>
-    </NextLink>
-  )
-}
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <main className="h-full">
-      <Link to="/">Home</Link>
-      <Link to="/test/userid123">Test 1</Link>
+      <span
+        style={{ background: 'lightgrey', margin: '20px', padding: '10px' }}
+      >
+        <Link href="/">Home</Link>
+      </span>
+      <span
+        style={{ background: 'lightgrey', margin: '20px', padding: '10px' }}
+      >
+        <Link href="/user">Static subroute</Link>
+      </span>
+      <span
+        style={{ background: 'lightgrey', margin: '20px', padding: '10px' }}
+      >
+        <Link href="/user/123">Dynamic subroute</Link>
+      </span>
+
+      {/* OPTION 1: Not wrapped in div */}
       <Component {...pageProps} />
+
+      {/* OPTION 2: Wrapped in div */}
+      {/* <div>
+        <Component {...pageProps} />
+      </div> */}
     </main>
   )
 }
