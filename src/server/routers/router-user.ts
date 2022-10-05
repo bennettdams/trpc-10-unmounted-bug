@@ -13,7 +13,7 @@ export const userRouter = t.router({
     .query(async ({ input, ctx }) => {
       const { userId } = input
 
-      const user = {userId: "123", username: "bennett"}
+      const user = { userId: '123', username: 'bennett' }
 
       if (!user) {
         throw new TRPCError({

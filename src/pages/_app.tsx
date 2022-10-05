@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import NextLink from "next/link"
+import NextLink from 'next/link'
 import { ReactNode } from 'react'
 import '../styles/globals.css'
 import { trpc } from '../util/trpc'
@@ -28,11 +28,13 @@ export function Link({
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return   <main className="h-full">
-  <Link to="/">Home</Link>
-  <Link to="/test/userid123">Test 1</Link>
-  <Component {...pageProps} />
-</main>
+  return (
+    <main className="h-full">
+      <Link to="/">Home</Link>
+      <Link to="/test/userid123">Test 1</Link>
+      <Component {...pageProps} />
+    </main>
+  )
 }
 
 export default trpc.withTRPC(MyApp)

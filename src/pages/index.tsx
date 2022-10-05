@@ -4,9 +4,9 @@ import styles from '../styles/Home.module.css'
 import { trpc } from '../util/trpc'
 
 const Home: NextPage = () => {
-  const { data, isLoading, isError } = trpc.user.byUserId.useQuery(
-    { userId: 'userid123' },
-  )
+  const { data, isLoading, isError } = trpc.user.byUserId.useQuery({
+    userId: 'userid123',
+  })
   return (
     <div className={styles.container}>
       <Head>
@@ -15,12 +15,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        Main
-
-        User: {data?.userId}
-      </main>
-
+      <main className={styles.main}>Main User: {data?.userId}</main>
     </div>
   )
 }
