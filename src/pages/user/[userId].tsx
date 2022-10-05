@@ -43,7 +43,11 @@ const Home: NextPage = () => {
     {
       userId: '123',
     },
-    { refetchOnMount: false, refetchOnWindowFocus: false }
+    {
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+      staleTime: 5 * 60 * 1000,
+    }
   )
   return <div>test 1</div>
 }
