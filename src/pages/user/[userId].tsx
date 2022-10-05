@@ -1,3 +1,4 @@
+import { DehydratedState } from '@tanstack/react-query'
 import { createProxySSGHelpers } from '@trpc/react/ssg'
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import superjson from 'superjson'
@@ -12,12 +13,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  if (!params) throw new Error('Wrong param type')
+export const getStaticProps: GetStaticProps<
+  { trpcState: DehydratedState },
+  { userId: string }
+> = async ({ params }) => {
+  if (!params) throw new Error('Mssing params')
 
   const userId = params.userId
-
-  if (typeof userId !== 'string') throw new Error('Wrong param type')
 
   const ssg = createProxySSGHelpers({
     router: appRouter,
