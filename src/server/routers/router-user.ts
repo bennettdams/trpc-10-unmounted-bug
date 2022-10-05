@@ -11,7 +11,11 @@ export const userRouter = t.router({
       })
     )
     .query(async ({ input, ctx }) => {
-      console.log(`${new Date().toISOString()} | Querying user..`)
+      console.log(
+        `${new Date().toISOString()} | Querying user.. | Where: ${
+          typeof window === 'undefined' ? 'Server' : 'Client'
+        }`
+      )
       const { userId } = input
 
       const user = { userId: '123', username: 'bennett' }

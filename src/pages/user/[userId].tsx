@@ -39,9 +39,12 @@ export const getStaticProps: GetStaticProps<
 }
 
 const Home: NextPage = () => {
-  const { data, isLoading, isError } = trpc.user.byUserId.useQuery({
-    userId: '123',
-  })
+  const { data, isLoading, isError } = trpc.user.byUserId.useQuery(
+    {
+      userId: '123',
+    },
+    { refetchOnMount: false, refetchOnWindowFocus: false }
+  )
   return <div>test 1</div>
 }
 
