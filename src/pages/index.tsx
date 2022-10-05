@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>User ID: {data?.userId}</main>
+      <main className={styles.main}>Index page</main>
     </div>
   )
 }

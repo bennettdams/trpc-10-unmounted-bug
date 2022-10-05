@@ -11,21 +11,25 @@ function MyApp({ Component, pageProps }: AppProps) {
       >
         <Link href="/">Home</Link>
       </span>
-      <span
+
+      {/* WEIRD: uncommenting this also makes the error go away */}
+
+      {/* <span
         style={{ background: 'lightgrey', margin: '20px', padding: '10px' }}
       >
-        <Link href="/user">Static subroute</Link>
-      </span>
+        <Link href="/user/123">Dynamic subroute</Link>
+      </span> */}
+
       <span
         style={{ background: 'lightgrey', margin: '20px', padding: '10px' }}
       >
         <Link href="/user/123">Dynamic subroute</Link>
       </span>
 
-      {/* OPTION 1: Not wrapped in div */}
+      {/* OPTION 1 (error): Not wrapped in div */}
       <Component {...pageProps} />
 
-      {/* OPTION 2: Wrapped in div */}
+      {/* OPTION 2 (no error): Wrapped in div */}
       {/* <div>
         <Component {...pageProps} />
       </div> */}

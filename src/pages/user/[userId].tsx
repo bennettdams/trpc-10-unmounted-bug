@@ -7,11 +7,7 @@ import { trpc } from '../../util/trpc'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    // TODO most popular users
-    paths: [
-      // { params: { id: '1' } },
-      // { params: { id: '2' } }
-    ],
+    paths: [],
     fallback: 'blocking',
   }
 }
