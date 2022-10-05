@@ -2,8 +2,8 @@
 
 Steps:
 
-1. npm i
-2. npm run dev
+1. `npm i`
+2. `npm run dev`
 3. Go to <http://localhost:3000>
 4. Click on "Dynamic Subroute"
 5. Error in console:
@@ -12,7 +12,12 @@ Steps:
    at Home
    ```
 
-Weird stuff, that will make the error go away (see `_app.tsx`):
+Changes on the setup, that will make the error go away:
 
-- Adding an additional `<Link />`
-- Wrapping the main component (`<Component {...pageProps} />`) in a div
+- see `pages/_app.tsx`
+  - Adding an additional `<Link />`
+  - Wrapping the main component (`<Component {...pageProps} />`) in a div
+- see `pages/user/[userId].tsx`
+  - comment out the prefetching (`await ssg.user.byUserId.prefetch({ userId })`)
+- see `pages/index.tsx`
+  - comment out fetching data on the client (`... trpc.user.byUserId.useQuery ...`)

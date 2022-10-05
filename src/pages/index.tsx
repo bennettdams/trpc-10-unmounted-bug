@@ -4,9 +4,11 @@ import styles from '../styles/Home.module.css'
 import { trpc } from '../util/trpc'
 
 const Home: NextPage = () => {
+  // comment out fetching here to make the error go away
   const { data, isLoading, isError } = trpc.user.byUserId.useQuery({
     userId: '123',
   })
+
   return (
     <div className={styles.container}>
       <Head>

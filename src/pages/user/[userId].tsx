@@ -24,6 +24,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     ctx: await createContextTRPC(),
     transformer: superjson,
   })
+
+  // comment this out to also make the error go away
   await ssg.user.byUserId.prefetch({ userId })
 
   return {
