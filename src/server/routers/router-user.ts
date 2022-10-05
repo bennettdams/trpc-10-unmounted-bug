@@ -11,6 +11,7 @@ export const userRouter = t.router({
       })
     )
     .query(async ({ input, ctx }) => {
+      console.log(`${new Date().toISOString()} | Querying user..`)
       const { userId } = input
 
       const user = { userId: '123', username: 'bennett' }
