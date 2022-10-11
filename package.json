@@ -9,7 +9,8 @@
     "lint": "next lint",
     "install-12": "npm install @trpc/server@10.0.0-proxy-beta.12 @trpc/client@10.0.0-proxy-beta.12 @trpc/react@10.0.0-proxy-beta.12 @trpc/next@10.0.0-proxy-beta.12",
     "install-13": "npm install @trpc/server@10.0.0-proxy-beta.13 @trpc/client@10.0.0-proxy-beta.13 @trpc/react@10.0.0-proxy-beta.13 @trpc/next@10.0.0-proxy-beta.13",
-    "install-14": "npm install @trpc/server@10.0.0-proxy-beta.14 @trpc/client@10.0.0-proxy-beta.14 @trpc/react@10.0.0-proxy-beta.14 @trpc/next@10.0.0-proxy-beta.14"
+    "install-14": "npm install @trpc/server@10.0.0-proxy-beta.14 @trpc/client@10.0.0-proxy-beta.14 @trpc/react@10.0.0-proxy-beta.14 @trpc/next@10.0.0-proxy-beta.14",
+    "install-17": "npm install @trpc/server@10.0.0-proxy-beta.17 @trpc/client@10.0.0-proxy-beta.17 @trpc/react@10.0.0-proxy-beta.17 @trpc/next@10.0.0-proxy-beta.17"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.9.0",
